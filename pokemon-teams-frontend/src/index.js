@@ -88,9 +88,6 @@ function renderTrainer(trainer_object) {
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
-
-console.log(mainElement)
-    console.log("page is loaded");
     getTrainerData().then(trainers => {
         trainers.forEach(trainer => {
             renderTrainer(trainer);
