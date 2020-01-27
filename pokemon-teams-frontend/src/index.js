@@ -30,12 +30,6 @@ function addPokemon(trainer_object) {
 function deletePokemon(pokemon, trainer) {
     return fetch(POKEMONS_URL+"/"+pokemon.id, {
         method:"DELETE",
-        //body: JSON.stringify({
-        //    "trainer_id": trainer_object.id,
-        //}),
-        //headers: {
-        //    "Content-type": "application/json; charset=UTF-8"
-        //}
     })
     .then(() => {
         let listElement = document.querySelector("ul");
@@ -88,20 +82,6 @@ function renderTrainer(trainer_object) {
     let pokemons = trainer_object.pokemons;
     pokemons.forEach(pokemon => {
         renderPokemon(pokemon, listElement, trainer_object);
-        //let liElement = document.createElement("li");
-        //liElement.setAttribute("id", pokemon.id);
-        //liElement.textContent = pokemon.nickname + " (" + pokemon.species + ")";
-//
-        //let btnPokemonRelease = document.createElement("button")
-        //btnPokemonRelease.textContent = "Release";
-        //btnPokemonRelease.setAttribute("class", "release");
-        //btnPokemonRelease.addEventListener("click", function(event) {
-        //  deletePokemon(pokemon, trainer_object);  
-        //})
-//
-        //liElement.append(btnPokemonRelease);
-        //listElement.append(liElement);
-
     })
     mainElement.append(divCardElement)
 }
